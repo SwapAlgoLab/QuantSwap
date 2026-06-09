@@ -1,0 +1,93 @@
+name: Steam / Buff / 交易任务异常
+description: 报告交易任务、Steam、Buff、库存、上架、下单、代理等执行异常
+title: "[Trade] "
+labels: ["trade", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        交易类 issue 可能涉及外部资产动作。请不要提交 Steam/Buff Cookie、session_id、Steam Guard、密码、代理密码、API Key、Token 或支付敏感信息。
+
+  - type: input
+    id: version
+    attributes:
+      label: 当前版本
+      placeholder: v1.0.4
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 影响范围
+      options:
+        - Steam
+        - Buff
+        - SteamDT 行情
+        - 代理
+        - 交易任务
+        - 库存同步
+        - 授权门禁
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: external_action
+    attributes:
+      label: 是否发生真实外部动作
+      options:
+        - 未发生
+        - 已下单
+        - 已付款
+        - 已上架
+        - 已下架
+        - 不确定
+    validations:
+      required: true
+
+  - type: input
+    id: task_id
+    attributes:
+      label: 任务 ID / 动作 ID
+      description: 可选。不要填写账号密码、Cookie 或 Steam Guard。
+      placeholder: task_xxx / action_xxx
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 触发步骤
+      placeholder: |
+        1. 打开交易任务...
+        2. 点击运行...
+        3. 出现...
+    validations:
+      required: true
+
+  - type: textarea
+    id: error_message
+    attributes:
+      label: 错误提示 / 日志片段
+      render: text
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 脱敏诊断信息
+      render: text
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 敏感信息确认
+      options:
+        - label: 我没有提交 Steam/Buff Cookie、session_id、Steam Guard、密码、代理密码、API Key、Token 或支付敏感信息。
+          required: true
+

@@ -1,0 +1,47 @@
+name: 功能建议 / 体验反馈
+description: 提出新功能、体验优化或产品建议
+title: "[Feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: 建议范围
+      options:
+        - 更新体验
+        - 授权 / 登录
+        - 交易任务
+        - Steam / Buff
+        - 库存 / 数据
+        - 设置 / 关于
+        - UI / 交互体验
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 当前痛点
+      description: 你现在遇到什么不方便或不清晰的地方？
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+      description: 你希望 QuantSwap 怎么改？
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 备选方案
+      description: 可选。如果你考虑过其他做法，可以写在这里。
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充信息 / 截图

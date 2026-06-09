@@ -1,0 +1,83 @@
+name: 安装 / 启动 / 更新问题
+description: 报告安装、启动、检查更新、下载更新或安装更新异常
+title: "[Update] "
+labels: ["update", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请不要提交授权码、设备 ID、Token、Cookie 或其他敏感凭据。更新问题建议先在“关于”页复制脱敏诊断信息。
+
+  - type: input
+    id: current_version
+    attributes:
+      label: 当前版本
+      placeholder: v1.0.4
+    validations:
+      required: true
+
+  - type: input
+    id: latest_version
+    attributes:
+      label: 检测到的新版本
+      placeholder: v1.0.5
+
+  - type: dropdown
+    id: channel
+    attributes:
+      label: 发布通道
+      options:
+        - 稳定版
+        - Beta
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 出问题的阶段
+      options:
+        - 安装客户端
+        - 启动客户端
+        - 检查更新
+        - 下载更新
+        - 安装并重启
+        - 更新后启动异常
+        - 卸载 / 重装
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+    validations:
+      required: true
+
+  - type: textarea
+    id: error_message
+    attributes:
+      label: 错误提示原文
+      description: 如有弹窗、toast、日志报错，请粘贴原文。
+      render: text
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 脱敏诊断信息
+      render: text
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图 / 录屏
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 敏感信息确认
+      options:
+        - label: 我已确认没有提交授权码、设备 ID、Token、Cookie 或其他敏感凭据。
+          required: true
+

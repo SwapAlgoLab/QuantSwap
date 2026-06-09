@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全漏洞或敏感信息
+    url: https://github.com/SwapAlgoLab/QuantSwap/security
+    about: 不要在公开 issue 提交漏洞细节、Cookie、Steam Guard、授权码、Token 或其他敏感凭据。
+

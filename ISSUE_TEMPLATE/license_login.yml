@@ -1,0 +1,71 @@
+name: 授权 / 登录 / 设备绑定问题
+description: 报告授权激活、登录、设备占用、授权服务器连接等问题
+title: "[License] "
+labels: ["license", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        授权问题请不要提交完整邮箱、授权码、设备 ID、密码或 Token。建议使用客户端“复制诊断信息”生成脱敏内容。
+
+  - type: input
+    id: version
+    attributes:
+      label: 当前版本
+      placeholder: v1.0.4
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license_status
+    attributes:
+      label: 授权状态
+      options:
+        - 有效
+        - 已过期
+        - 设备占用
+        - 授权服务器不可用
+        - 登录失败
+        - 邮箱验证失败
+        - 不确定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: changed_device
+    attributes:
+      label: 最近是否更换设备或重装系统
+      options:
+        - 没有
+        - 更换过设备
+        - 重装过系统
+        - 不确定
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+    validations:
+      required: true
+
+  - type: textarea
+    id: error_message
+    attributes:
+      label: 错误提示原文
+      render: text
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 脱敏诊断信息
+      description: 请使用客户端“复制诊断信息”，不要手动填写完整邮箱、授权码或设备 ID。
+      render: text
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 敏感信息确认
+      options:
+        - label: 我没有提交完整邮箱、授权码、设备 ID、密码或 Token。
+          required: true
+

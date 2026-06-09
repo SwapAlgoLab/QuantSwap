@@ -1,0 +1,90 @@
+name: 功能异常 / 界面问题
+description: 报告 QuantSwap 的功能异常、界面显示异常或普通 Bug
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请不要提交 Steam 密码、Cookie、Steam Guard、授权码、设备 ID、API Key、Token、代理密码或支付敏感信息。
+
+  - type: input
+    id: version
+    attributes:
+      label: 当前版本
+      description: 在“系统设置 -> 关于”中查看，例如 v1.0.4
+      placeholder: v1.0.4
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 问题区域
+      options:
+        - 关于 / 更新
+        - 账号管理
+        - 交易中心
+        - 数据中心
+        - 库存管理
+        - 模板管理
+        - 系统设置
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 简短说明你遇到的问题。
+      placeholder: 例如：点击检查更新后按钮一直处于正在检查状态。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开...
+        2. 点击...
+        3. 看到...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 脱敏诊断信息
+      description: 点击客户端“关于 -> 复制诊断信息”后粘贴到这里。
+      render: text
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图 / 录屏
+      description: 可拖拽上传截图或录屏。
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: 敏感信息确认
+      options:
+        - label: 我已确认没有提交密码、Cookie、Steam Guard、授权码、设备 ID、API Key、Token、代理密码或支付敏感信息。
+          required: true
+
